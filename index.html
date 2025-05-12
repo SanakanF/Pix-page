@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagar com PIX</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .codebox { word-wrap: break-word; background: #f2f2f2; padding: 20px; border-radius: 8px; margin: 20px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Pagamento por PIX</h2>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126330014BR.GOV.BCB.PIX01110520765168452040000530398654041.005802BR5916Sanakan%20Firmino6015Belo%20Horizonte6108031037062230519EnergiaMeioAmbiente630415D7" alt="QR Code PIX">
+  
+  <p>Ou copie o código abaixo e cole no app do seu banco:</p>
+  <div class="codebox" id="pixcode">
+    00020126330014BR.GOV.BCB.PIX01110520765168452040000530398654041.005802BR5916Sanakan Firmino6015Belo Horizonte6108031037062230519EnergiaMeioAmbiente630415D7
+  </div>
+  <button onclick="copyPix()">Copiar código PIX</button>
+
+  <script>
+    function copyPix() {
+      const code = document.getElementById("pixcode").innerText;
+      navigator.clipboard.writeText(code);
+      alert("Código PIX copiado!");
+    }
+  </script>
+</body>
+</html>
